@@ -34,6 +34,8 @@ namespace Game.Player
         public event Action<bool> OnDashingChanged;
         public event Action<bool> OnCrouchingChanged;
 
+        public event Action OnPlayerMoved;
+
         void Awake()
         {
             GatherInput();
@@ -104,6 +106,11 @@ namespace Game.Player
             //{
                 //ConsumeEnemy();
             //}
+
+            if (Input.X != 0)
+            {
+                OnPlayerMoved?.Invoke();
+            }
 
             if(Input.X == 1)
             {
@@ -244,6 +251,7 @@ namespace Game.Player
 
         private void CalculateHorizontal()
         {
+            if(Input == null) return;
             if (Input.X != 0)
             {
                 _currentHorizontalSpeed += Input.X * _acceleration * Time.fixedDeltaTime;

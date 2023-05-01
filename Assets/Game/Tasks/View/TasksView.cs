@@ -31,7 +31,6 @@ namespace Game.Tasks.View
 
         private void HideTasks(int amount)
         {
-            Debug.Log("hiding tasks" + amount);
             for (int i = 0; i < _tasks.Count; i++)
             {
                 if (i >= amount)
@@ -47,6 +46,7 @@ namespace Game.Tasks.View
 
         private void HideTask(int taskID)
         {
+            _tasks[taskID].gameObject.SetActive(false);
             _tasks.Remove(_tasks[taskID]);
         }
         

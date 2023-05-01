@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Infrastructure;
+using JetBrains.Annotations;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using Zenject;
@@ -19,8 +21,7 @@ namespace Game.Tasks
         [Inject] private World _world;
 
         public event Action<int> OnTaskCompleted;
-        public event Action<TaskSO> OnTaskSetUp;
-        
+
         public event Action<List<TaskSO>> OnTasksSetUp;
 
         private void Awake()
@@ -33,21 +34,19 @@ namespace Game.Tasks
         private void SetUpTasksList()
         {
             SetActiveTasksFromCurrentTasksList();
-            OnTasksSetUp?.Invoke(_activeTasks);
         }
 
         private void SetActiveTasksFromCurrentTasksList()
         {
             _activeTasks.Clear();
             var currentList = GetAllTasksInList();
-            for (int i = 0; i < currentList.Length; i++)
-            {
-                if (_currentTask >= i)
+            if (currentList != null)
+                foreach (var task in currentList)
                 {
-                    _activeTasks.Add(currentList[i]);
-                    Debug.Log("taask added");
+                    _activeTasks.Add(task);
                 }
-            }
+
+            OnTasksSetUp?.Invoke(_activeTasks);
         }
 
         private void CompleteTask(int taskID)
@@ -59,22 +58,27 @@ namespace Game.Tasks
 
         private void CheckLeftoverTasks()
         {
-            if (_currentTask >= GetAllTasksInList().Length)
+            if (_currentTask < GetAllTasksInList()!.Length) return;
+            CheckForTasksCompletionStatus();
+            _currentTaskList += 1;
+            _currentTask = 0;
+            SetActiveTasksFromCurrentTasksList();
+        }
+
+        private void CheckForTasksCompletionStatus()
+        {
+            if (_currentTaskList >= _listOfTasks.Length)
             {
-                _currentTaskList += 1;
-                _currentTask = 0;
+                Debug.Log("game won");
             }
         }
 
-        public void CompleteTasksList()
-        {
-            
-        }
         private TaskSO GetCurrentTask()
         {
             return _listOfTasks[_currentTaskList].Tasks[_currentTask];
         }
 
+        [CanBeNull]
         private TaskSO[] GetAllTasksInList()
         {
             return _listOfTasks[_currentTaskList].Tasks;
@@ -91,26 +95,29 @@ namespace Game.Tasks
         private float _timer;
         public void EngageChillTask()
         {
-            _timer += Time.deltaTime;
-
-            if (_timer >= ReturnChillTaskTimer())
+            foreach (var task in _activeTasks)
             {
-                CompleteChillTask();
+                if (task.TaskType != TaskType.Chill)
+                {
+                    return;
+                }
+                
+                _timer += Time.deltaTime;
+
+                if (_timer >= ReturnChillTaskTimer())
+                {
+                    CompleteChillTask();
+                }
             }
         }
 
         private float ReturnChillTaskTimer()
         {
-            foreach (var task in _activeTasks)
+            foreach (var task in _activeTasks.Where(task => task.TaskType == TaskType.Chill))
             {
-                if (task.TaskType == TaskType.Chill)
-                {
-                    Debug.Log(_timer);
-                    return task.Time;
-                }
+                return task.Time;
             }
-
-            Debug.Log("5");
+            
             return 5;
         }
         
@@ -131,9 +138,52 @@ namespace Game.Tasks
 
         #endregion
 
-        public void CompleteFindObjectTask()
+        #region Move Task
+
+        public void CompleteMoveTask()
         {
-            
+            var id = 0;
+            foreach (var task in _activeTasks)
+            {
+                if (task.TaskType == TaskType.Move)
+                {
+                    CompleteTask(id);
+                    return;
+                }
+                id += 1;
+            }
         }
+
+        #endregion
+        
+        #region Find Object Task
+
+        
+
+        #endregion
+        
+        #region Jump On Task
+
+        
+
+        #endregion
+        
+        #region Pass Object Task
+
+        
+
+        #endregion
+        
+        #region Break Object Task
+
+        
+
+        #endregion
+        
+        #region Collect All Objects Task
+
+        
+
+        #endregion
     }
 }
