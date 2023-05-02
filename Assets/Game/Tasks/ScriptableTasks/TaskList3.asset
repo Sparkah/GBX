@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 169dc6d7d91034c8e8fdeeddba6a797c, type: 3}
-  m_Name: TaskList1
+  m_Name: TaskList3
   m_EditorClassIdentifier: 
   Tasks:
-  - {fileID: 11400000, guid: 37d1c5cb6514e4c4d801f7a252903798, type: 2}
-  _objectsToActivate:
-  - {fileID: 0}
-  _objectsToDeActivate:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: ecd20d6557ac24bffb9670f7b485aa09, type: 2}
+  _objectsToActivate: []
+  _objectsToDeActivate: []
   _particleSystemsToPlay: []

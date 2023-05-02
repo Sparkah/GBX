@@ -33,6 +33,8 @@ namespace Game.Tasks
 
         private void SetUpTasksList()
         {
+            ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
+            PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
             SetActiveTasksFromCurrentTasksList();
         }
 
@@ -68,11 +70,35 @@ namespace Game.Tasks
         private void CheckLeftoverTasks()
         {
             if (_currentTask < GetAllTasksInList()!.Length) return;
+            DeActivateObjectsOnTaskListEnded(_listOfTasks[_currentTaskList]);
             _currentTaskList += 1;
             _currentTask = 0;
             SetActiveTasksFromCurrentTasksList();
         }
-        
+
+        private void DeActivateObjectsOnTaskListEnded(TaskListSO tasks)
+        {
+            foreach (var gameObj in tasks.ObjectsToDeActivate)
+            {
+                gameObj.SetActive(false);
+            }
+        }
+
+        private void PlayParticleSystemsOnTaskListAdded(TaskListSO tasks)
+        {
+            foreach (var ps in tasks.ParticleSystemsToPlay)
+            {
+                ps.Play();
+            }
+        }
+
+        private void ActivateObjectsOnNewTaskList(TaskListSO tasks)
+        {
+            foreach (var gameObj in tasks.ObjectsToActivate)
+            {
+                gameObj.SetActive(true);
+            }
+        }
 
         private TaskSO GetCurrentTask()
         {
