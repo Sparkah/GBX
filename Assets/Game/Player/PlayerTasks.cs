@@ -9,18 +9,34 @@ namespace Game.Player
         [SerializeField] private PlayerController _playerController;
         
         [Inject] private TasksSystem _tasksSystem;
+        private int _chillLayer, _touchLayer;
         
         private void Awake()
         {
             _playerController.OnPlayerMoved += CompleteMoveTask;
+            _chillLayer = LayerMask.NameToLayer("Chill");
+            _touchLayer = LayerMask.NameToLayer("Touch");
         }
-
+        
         private void OnTriggerStay2D(Collider2D col)
         {
-            var layer = LayerMask.NameToLayer("Chill");
-            if (col.gameObject.layer == layer)
+            if (col.gameObject.layer == _chillLayer)
             {
                 _tasksSystem.EngageChillTask();
+            }
+        }
+
+        private bool _hasTouched;
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.gameObject.layer == _touchLayer)
+            {
+                if (!_hasTouched)
+                {
+                    _hasTouched = true;
+                    col.GetComponent<Rigidbody2D>().gravityScale = 1;
+                    _tasksSystem.CompletePassObjectTask();
+                }
             }
         }
 
@@ -33,7 +49,7 @@ namespace Game.Player
                 _tasksSystem.CompleteMoveTask();
             }
         }
-        
+
         private void OnDestroy()
         {
             _playerController.OnPlayerMoved -= CompleteMoveTask;

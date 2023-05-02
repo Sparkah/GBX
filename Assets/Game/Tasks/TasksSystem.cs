@@ -44,9 +44,18 @@ namespace Game.Tasks
                 foreach (var task in currentList)
                 {
                     _activeTasks.Add(task);
+                    IterateAndResetTasks(task);
                 }
 
             OnTasksSetUp?.Invoke(_activeTasks);
+        }
+
+        private void IterateAndResetTasks(TaskSO task)
+        {
+            if (task.TaskType == TaskType.Chill)
+            {
+                _chillTaskCompleted = false;
+            }
         }
 
         private void CompleteTask(int taskID)
@@ -59,19 +68,11 @@ namespace Game.Tasks
         private void CheckLeftoverTasks()
         {
             if (_currentTask < GetAllTasksInList()!.Length) return;
-            CheckForTasksCompletionStatus();
             _currentTaskList += 1;
             _currentTask = 0;
             SetActiveTasksFromCurrentTasksList();
         }
-
-        private void CheckForTasksCompletionStatus()
-        {
-            if (_currentTaskList >= _listOfTasks.Length)
-            {
-                Debug.Log("game won");
-            }
-        }
+        
 
         private TaskSO GetCurrentTask()
         {
@@ -81,7 +82,15 @@ namespace Game.Tasks
         [CanBeNull]
         private TaskSO[] GetAllTasksInList()
         {
-            return _listOfTasks[_currentTaskList].Tasks;
+            try
+            {
+                return _listOfTasks[_currentTaskList].Tasks;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.Log("Win game");
+                return null;
+            }
         }
 
         private void OnDestroy()
@@ -92,9 +101,11 @@ namespace Game.Tasks
 
         #region Chill Task
 
+        private bool _chillTaskCompleted;
         private float _timer;
         public void EngageChillTask()
         {
+            if (_chillTaskCompleted) return;
             foreach (var task in _activeTasks)
             {
                 if (task.TaskType != TaskType.Chill)
@@ -106,7 +117,9 @@ namespace Game.Tasks
 
                 if (_timer >= ReturnChillTaskTimer())
                 {
+                    _chillTaskCompleted = true;
                     CompleteChillTask();
+                    return;
                 }
             }
         }
@@ -129,8 +142,8 @@ namespace Game.Tasks
             {
                 if (task.TaskType == TaskType.Chill)
                 {
-                    Debug.Log("task chill complete");
                     CompleteTask(id);
+                    return;
                 }
                 id += 1;
             }
@@ -146,6 +159,24 @@ namespace Game.Tasks
             foreach (var task in _activeTasks)
             {
                 if (task.TaskType == TaskType.Move)
+                {
+                    CompleteTask(id);
+                    return;
+                }
+                id += 1;
+            }
+        }
+
+        #endregion
+        
+        #region Touch Task
+
+        public void CompletePassObjectTask()
+        {
+            var id = 0;
+            foreach (var task in _activeTasks)
+            {
+                if (task.TaskType == TaskType.PassObject)
                 {
                     CompleteTask(id);
                     return;
