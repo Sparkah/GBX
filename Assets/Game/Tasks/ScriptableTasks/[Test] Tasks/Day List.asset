@@ -10,10 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 169dc6d7d91034c8e8fdeeddba6a797c, type: 3}
-  m_Name: Hello List
+  m_Name: Day List
   m_EditorClassIdentifier: 
   Tasks:
-  - {fileID: 11400000, guid: 0043126a5b630ba46ae505f72d1124c7, type: 2}
-  - {fileID: 11400000, guid: f6867bcb50282464d9cf969b4578bb92, type: 2}
-  - {fileID: 11400000, guid: e70a6b7aa011a71429aa833288fbad7b, type: 2}
+  - {fileID: 11400000, guid: 191a21c07d6160b4aab268fd9168693a, type: 2}
   TaskReferencer: {fileID: 0}
