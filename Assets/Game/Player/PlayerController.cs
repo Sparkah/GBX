@@ -10,6 +10,7 @@ namespace Game.Player
     public class PlayerController : MonoBehaviour
     {
         [SerializeField] private Transform _obstacleRayRight = null;
+
         [SerializeField] private Transform _obstacleRayLeft = null;
 
         [Space]
@@ -50,7 +51,10 @@ namespace Game.Player
             ObstacleRayTransform = _obstacleRayRight;
         }
 
-        private void Update() => GatherInput();
+        private void Update()
+        {
+            GatherInput();
+        }
 
         private void FixedUpdate()
         {

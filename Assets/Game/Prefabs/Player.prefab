@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 3503430426546219570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 54.489, y: -2.573, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.48735, y: 0.48735, z: 0.48735}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2860200701701573522}
@@ -133,7 +133,7 @@ MonoBehaviour:
   _minFallSpeed: 80
   _maxFallSpeed: 120
   _groundedSpeed: 35.04
-  _jumpHeight: 25
+  _jumpHeight: 15
   _jumpApexThreshold: 25
   _coyoteTimeThreshold: 50
   _jumpBuffer: 4
