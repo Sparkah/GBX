@@ -144,8 +144,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdfc35ef8987479cb0e3674d94f07190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuSceneMusic: {fileID: 0}
-  _levelSceneMusic: []
+  _menuSceneMusic: {fileID: 8300000, guid: 3d1538a357bd7ef489b4bd789b05fbf2, type: 3}
+  _levelSceneMusic:
+  - {fileID: 8300000, guid: 83fdfb47f7a8cd04d8dcc128b32d7d15, type: 3}
 --- !u!1 &2965714128023367925
 GameObject:
   m_ObjectHideFlags: 0
@@ -320,6 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSourceMain: {fileID: 7698896602412660651}
   _audioSourceSecondary: {fileID: 6725695602026794179}
+  _audioSourceBackground: {fileID: 0}
   _someClip: {fileID: 0}
 --- !u!1 &5313252633059848830
 GameObject:
