@@ -42,13 +42,15 @@ namespace Game.Tasks
 
         private void SetUpTasksList()
         {
-            ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
-            PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
+            //ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
+            //PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
             SetActiveTasksFromCurrentTasksList();
         }
 
         private void SetActiveTasksFromCurrentTasksList()
         {
+            ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
+            PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
             _activeTasks.Clear();
             var currentList = GetAllTasksInList();
             if (currentList != null)
@@ -105,6 +107,7 @@ namespace Game.Tasks
         {
             foreach (var gameObj in tasks.TaskReferencer.ObjectsToActivate)
             {
+                Debug.Log("activating");
                 gameObj.SetActive(true);
             }
         }
