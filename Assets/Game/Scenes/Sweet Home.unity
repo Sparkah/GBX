@@ -887,7 +887,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 195}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &213634079
 MonoBehaviour:
@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 287291568}
   - component: {fileID: 287291567}
   - component: {fileID: 287291569}
+  - component: {fileID: 287291570}
   m_Layer: 9
   m_Name: Vase
   m_TagString: Untagged
@@ -1623,6 +1624,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &287291570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 287291565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f5a304c7aaa40e1b6a341066092858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _taskSo: {fileID: 11400000, guid: 0043126a5b630ba46ae505f72d1124c7, type: 2}
 --- !u!1 &301312158
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,6 +5823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerController: {fileID: 662532583}
+  _testAction: {fileID: 2084865902}
 --- !u!1 &676711702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8837,6 +8852,7 @@ GameObject:
   - component: {fileID: 1660494803}
   - component: {fileID: 1660494802}
   - component: {fileID: 1660494801}
+  - component: {fileID: 1660494804}
   m_Layer: 9
   m_Name: Ducky
   m_TagString: Untagged
@@ -8958,6 +8974,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1660494804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660494799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01f5a304c7aaa40e1b6a341066092858, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _taskSo: {fileID: 11400000, guid: f6867bcb50282464d9cf969b4578bb92, type: 2}
 --- !u!1 &1663912983
 GameObject:
   m_ObjectHideFlags: 0
@@ -9749,6 +9778,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2084865902 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6419230021168959515, guid: ead35982798b5324f9273b5a0bf44380, type: 3}
+  m_PrefabInstance: {fileID: 6419230022187617256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138dede7b05d8ef46af3b8e0d1dc3e25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2134601764
 GameObject:
   m_ObjectHideFlags: 0

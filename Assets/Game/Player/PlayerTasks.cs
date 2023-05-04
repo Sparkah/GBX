@@ -1,3 +1,4 @@
+using System.Collections;
 using Assets.Game.Scripts.Events;
 using Game.Tasks;
 using UnityEngine;
@@ -44,9 +45,16 @@ namespace Game.Player
                 {
                     _hasTouched = true;
                     col.GetComponent<Rigidbody2D>().gravityScale = 1;
-                    _tasksSystem.CompletePassObjectTask();
+                    _tasksSystem.CompletePassObjectTask(col.gameObject.GetComponent<TaskTouchReference>()._taskSo.Text);
+                    StartCoroutine(EnableTouch());
                 }
             }
+        }
+
+        private IEnumerator EnableTouch()
+        {
+            yield return new WaitForSeconds(1f);
+            _hasTouched = false;
         }
 
         private bool _hasMoved;

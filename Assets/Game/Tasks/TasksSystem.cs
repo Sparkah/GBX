@@ -117,11 +117,11 @@ namespace Game.Tasks
         [CanBeNull]
         private TaskSO[] GetAllTasksInList()
         {
-            try
+            if (_currentTaskList >= 0 && _currentTaskList < _listOfTasks.Count)
             {
                 return _listOfTasks[_currentTaskList].Tasks;
             }
-            catch (IndexOutOfRangeException)
+            else
             {
                 Debug.Log("Win game");
                 return null;
@@ -206,12 +206,12 @@ namespace Game.Tasks
         
         #region Touch Task
 
-        public void CompletePassObjectTask()
+        public void CompletePassObjectTask(string name)
         {
             var id = 0;
             foreach (var task in _activeTasks)
             {
-                if (task.TaskType == TaskType.PassObject)
+                if (task.TaskType == TaskType.PassObject && task.Text == name)
                 {
                     CompleteTask(id);
                     return;

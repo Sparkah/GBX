@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hello_1_Vase
   m_EditorClassIdentifier: 
   _taskType: 5
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 21300000, guid: 7a343d875e2e0804797e94072f467309, type: 3}
   _text: Vase
   _time: 0
