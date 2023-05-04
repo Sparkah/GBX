@@ -36,18 +36,13 @@ namespace Game.Audio.Scripts
         {
             if (stop)
             {
-                _audioSource.Pause();
+                _audioSource?.Pause();
             }
 
             if (!stop)
             {
-                _audioSource.Play();
+                _audioSource?.Play();
             }
-        }
-
-        public void ChangeMusic(AudioClip audioClip)
-        {
-            _audioSource.clip = audioClip;
         }
 
         private void OnDestroy()
