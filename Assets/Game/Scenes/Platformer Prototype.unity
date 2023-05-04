@@ -2145,7 +2145,7 @@ GameObject:
   - component: {fileID: 811947797}
   - component: {fileID: 811947798}
   m_Layer: 6
-  m_Name: Podval
+  m_Name: Basement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4544,6 +4544,10 @@ PrefabInstance:
       propertyPath: _testAction
       value: 
       objectReference: {fileID: 1624010465}
+    - target: {fileID: 3503430426546219568, guid: 5d6becb43b2458b43b46a3b3e2507b0b, type: 3}
+      propertyPath: _jumpHeight
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3503430426546219570, guid: 5d6becb43b2458b43b46a3b3e2507b0b, type: 3}
       propertyPath: m_Name
       value: Player
