@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 169dc6d7d91034c8e8fdeeddba6a797c, type: 3}
-  m_Name: TaskList5
+  m_Script: {fileID: 11500000, guid: 4927528db99014c7f815db64fcc5ba07, type: 3}
+  m_Name: Task5 - Interract
   m_EditorClassIdentifier: 
-  Tasks:
-  - {fileID: 11400000, guid: 8f0c2020db1f04306820efa8a56a9ff9, type: 2}
-  TaskReferencer: {fileID: 0}
+  _taskType: 8
+  _sprite: {fileID: 0}
+  _text: interract with another cat
+  _time: 3

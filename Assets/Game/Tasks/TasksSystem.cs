@@ -221,6 +221,25 @@ namespace Game.Tasks
         }
 
         #endregion
+
+        #region InterractTask
+
+        public void CompleteInterractTask()
+        {
+            var id = 0;
+            foreach (var task in _activeTasks)
+            {
+                if (task.TaskType == TaskType.Interract)
+                {
+                    CompleteTask(id);
+                    return;
+                }
+
+                id += 1;
+            }
+        }
+
+        #endregion
         
         #region Find Object Task
 

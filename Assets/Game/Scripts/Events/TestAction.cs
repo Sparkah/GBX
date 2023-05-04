@@ -1,3 +1,4 @@
+using System;
 using Game.Player;
 
 using UnityEngine;
@@ -11,8 +12,7 @@ namespace Assets.Game.Scripts.Events
         [SerializeField]
         private TMPro.TextMeshPro interactionText;
 
-        [SerializeField]
-        private UnityEvent onInteraction;
+        public event Action OnInteraction;
 
         [SerializeField]
         private bool isSingleUse = true;
@@ -51,7 +51,7 @@ namespace Assets.Game.Scripts.Events
 
         private void Awake()
         {
-            playerCamera = FindObjectOfType<Camera>()?.transform;//Тут типа можно за место камеры любой скрипт поставить
+            playerCamera = FindObjectOfType<Camera>()?.transform;//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
             if (interactionText == null)
                 return;
@@ -73,7 +73,7 @@ namespace Assets.Game.Scripts.Events
                     RemoveAction();
 
                 Debug.Log("ACTION");
-                onInteraction?.Invoke();
+                OnInteraction?.Invoke();
             }
 
             if (interactionText == null)

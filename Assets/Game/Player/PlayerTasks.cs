@@ -1,5 +1,7 @@
+using Assets.Game.Scripts.Events;
 using Game.Tasks;
 using UnityEngine;
+using UnityEngine.Events;
 using Zenject;
 
 namespace Game.Player
@@ -7,6 +9,7 @@ namespace Game.Player
     public class PlayerTasks : MonoBehaviour
     {
         [SerializeField] private PlayerController _playerController;
+        [SerializeField] private TestAction _testAction;
         
         [Inject] private TasksSystem _tasksSystem;
         private int _chillLayer, _touchLayer;
@@ -16,8 +19,14 @@ namespace Game.Player
             _playerController.OnPlayerMoved += CompleteMoveTask;
             _chillLayer = LayerMask.NameToLayer("Chill");
             _touchLayer = LayerMask.NameToLayer("Touch");
+            _testAction.OnInteraction += CompleteInterractionTask;
         }
-        
+
+        private void CompleteInterractionTask()
+        {
+            _tasksSystem.CompleteInterractTask();
+        }
+
         private void OnTriggerStay2D(Collider2D col)
         {
             if (col.gameObject.layer == _chillLayer)
