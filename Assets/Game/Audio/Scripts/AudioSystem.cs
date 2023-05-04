@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Infrastructure.Helpers;
 using UnityEngine.SceneManagement;
@@ -18,6 +19,8 @@ namespace Game.Audio.Scripts
             _audioSource = GetComponent<AudioSource>();
             SceneManager.sceneLoaded += OnSceneLoaded;
             _audioSource.clip = _menuSceneMusic;
+
+            StopSceneMusicAction += StopSceneMusic;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -32,22 +35,19 @@ namespace Game.Audio.Scripts
             _audioSource.Play();
         }
 
+        public static Action<bool> StopSceneMusicAction { get; set; }
+
         public void StopSceneMusic(bool stop)
         {
             if (stop)
             {
-                _audioSource.Pause();
+                _audioSource?.Pause();
             }
 
             if (!stop)
             {
-                _audioSource.Play();
+                _audioSource?.Play();
             }
-        }
-
-        public void ChangeMusic(AudioClip audioClip)
-        {
-            _audioSource.clip = audioClip;
         }
 
         private void OnDestroy()

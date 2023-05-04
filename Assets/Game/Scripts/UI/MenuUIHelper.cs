@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections;
 using UnityEngine.Events;
+using Game.Audio.Scripts;
 
 namespace Assets.Game.Scripts.UI
 {
@@ -16,9 +17,13 @@ namespace Assets.Game.Scripts.UI
         [SerializeField]
         private UnityEvent OnResume;
 
-        private void Awake()
+        private void OnEnable()
         {
             SetPause(true);
+        }
+
+        private void OnDisable()
+        {
         }
 
         private void Update()
@@ -49,9 +54,17 @@ namespace Assets.Game.Scripts.UI
             Time.timeScale = value ? 0 : 1;
 
             if (value)
+            {
                 OnPause?.Invoke();
+                AudioSystem.StopSceneMusicAction?.Invoke(false);
+                AudioPlayer.StatBackgroundMusicAction?.Invoke(false);
+            }
             else
+            {
                 OnResume?.Invoke();
+                AudioSystem.StopSceneMusicAction?.Invoke(true);
+                AudioPlayer.StatBackgroundMusicAction?.Invoke(true);
+            }
         }
 
         #endregion Pause

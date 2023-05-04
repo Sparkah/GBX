@@ -1,3 +1,5 @@
+using System;
+
 using UnityEngine;
 
 using Random = UnityEngine.Random;
@@ -23,7 +25,11 @@ namespace Game.Audio.Scripts
                 Destroy(this);
             else
                 Audio = this;
+
+            StatBackgroundMusicAction += StatBackgroundMusic;
         }
+
+        public static Action<bool> StatBackgroundMusicAction { get; set; }
 
         public void StatBackgroundMusic(bool start)
         {
