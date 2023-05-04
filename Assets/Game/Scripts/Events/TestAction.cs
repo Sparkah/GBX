@@ -71,8 +71,7 @@ namespace Assets.Game.Scripts.Events
 
                 if (isSingleUse)
                     RemoveAction();
-
-                Debug.Log("ACTION");
+                
                 OnInteraction?.Invoke();
             }
 
