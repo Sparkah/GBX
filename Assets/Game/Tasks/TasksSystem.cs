@@ -18,8 +18,8 @@ namespace Game.Tasks
         
         private List<TaskListSO> _listOfTasks = new List<TaskListSO>();
         
-        [ShowInInspector] private int _currentTask;
-        [ShowInInspector] private int _currentTaskList;
+        [ShowInInspector, ReadOnly] private int _currentTask;
+        [ShowInInspector, ReadOnly] private int _currentTaskList;
         private List<TaskSO> _activeTasks = new List<TaskSO>();
 
         private void Awake()
