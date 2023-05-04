@@ -11,23 +11,26 @@ namespace Game.Tasks
 {
     public class TasksSystem : MonoBehaviour
     {
+        [Inject] private World _world;
+        
+        public event Action<int> OnTaskCompleted;
+        public event Action<List<TaskSO>> OnTasksSetUp;
+        
+        private List<TaskListSO> _listOfTasks = new List<TaskListSO>();
+        
         [ShowInInspector] private int _currentTask;
         [ShowInInspector] private int _currentTaskList;
         private List<TaskSO> _activeTasks = new List<TaskSO>();
-        public List<TaskSO> ActiveTasks => _activeTasks;
-        
-        [SerializeField] private TaskListSO[] _listOfTasks;
-
-        [Inject] private World _world;
-
-        public event Action<int> OnTaskCompleted;
-
-        public event Action<List<TaskSO>> OnTasksSetUp;
 
         private void Awake()
         {
             _currentTaskList = _world.CurrentTaskListID.Value;
             _currentTask = _world.CurrentTaskID.Value;
+            var taskRefereces = GetComponentsInChildren<TaskReferencer>();
+            foreach (var task in taskRefereces)
+            {
+                _listOfTasks.Add(task.TaskList);
+            }
             SetUpTasksList();
         }
 
@@ -78,7 +81,7 @@ namespace Game.Tasks
 
         private void DeActivateObjectsOnTaskListEnded(TaskListSO tasks)
         {
-            foreach (var gameObj in tasks.ObjectsToDeActivate)
+            foreach (var gameObj in tasks.TaskReferencer.ObjectsToDeActivate)
             {
                 gameObj.SetActive(false);
             }
@@ -86,7 +89,7 @@ namespace Game.Tasks
 
         private void PlayParticleSystemsOnTaskListAdded(TaskListSO tasks)
         {
-            foreach (var ps in tasks.ParticleSystemsToPlay)
+            foreach (var ps in tasks.TaskReferencer.ParticleSystemsToPlay)
             {
                 ps.Play();
             }
@@ -94,7 +97,7 @@ namespace Game.Tasks
 
         private void ActivateObjectsOnNewTaskList(TaskListSO tasks)
         {
-            foreach (var gameObj in tasks.ObjectsToActivate)
+            foreach (var gameObj in tasks.TaskReferencer.ObjectsToActivate)
             {
                 gameObj.SetActive(true);
             }
