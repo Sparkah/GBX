@@ -42,13 +42,15 @@ namespace Game.Tasks
 
         private void SetUpTasksList()
         {
-            ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
-            PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
+            //ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
+            //PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
             SetActiveTasksFromCurrentTasksList();
         }
 
         private void SetActiveTasksFromCurrentTasksList()
         {
+            ActivateObjectsOnNewTaskList(_listOfTasks[_currentTaskList]);
+            PlayParticleSystemsOnTaskListAdded(_listOfTasks[_currentTaskList]);
             _activeTasks.Clear();
             var currentList = GetAllTasksInList();
             if (currentList != null)
@@ -105,6 +107,7 @@ namespace Game.Tasks
         {
             foreach (var gameObj in tasks.TaskReferencer.ObjectsToActivate)
             {
+                Debug.Log("activating");
                 gameObj.SetActive(true);
             }
         }
@@ -117,11 +120,11 @@ namespace Game.Tasks
         [CanBeNull]
         private TaskSO[] GetAllTasksInList()
         {
-            try
+            if (_currentTaskList >= 0 && _currentTaskList < _listOfTasks.Count)
             {
                 return _listOfTasks[_currentTaskList].Tasks;
             }
-            catch (IndexOutOfRangeException)
+            else
             {
                 Debug.Log("Win game");
                 return null;
@@ -206,12 +209,12 @@ namespace Game.Tasks
         
         #region Touch Task
 
-        public void CompletePassObjectTask()
+        public void CompletePassObjectTask(string name)
         {
             var id = 0;
             foreach (var task in _activeTasks)
             {
-                if (task.TaskType == TaskType.PassObject)
+                if (task.TaskType == TaskType.PassObject && task.Text == name)
                 {
                     CompleteTask(id);
                     return;
