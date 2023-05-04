@@ -1,5 +1,5 @@
-using Infrastructure.Helpers;
 using UnityEngine;
+using Infrastructure.Helpers;
 using UnityEngine.SceneManagement;
 
 namespace Game.Audio.Scripts
@@ -8,6 +8,7 @@ namespace Game.Audio.Scripts
     {
         [Header("Main sound themes")]
         [SerializeField] private AudioClip _menuSceneMusic;
+
         [SerializeField] private AudioClip[] _levelSceneMusic;
 
         private AudioSource _audioSource;
@@ -16,6 +17,7 @@ namespace Game.Audio.Scripts
         {
             _audioSource = GetComponent<AudioSource>();
             SceneManager.sceneLoaded += OnSceneLoaded;
+            _audioSource.clip = _menuSceneMusic;
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -24,7 +26,7 @@ namespace Game.Audio.Scripts
                 _audioSource.clip = _menuSceneMusic;
             else
             {
-//                _audioSource.clip = _levelSceneMusic[Random.Range(0,_levelSceneMusic.Length)];
+                //                _audioSource.clip = _levelSceneMusic[Random.Range(0,_levelSceneMusic.Length)];
             }
 
             _audioSource.Play();
@@ -41,6 +43,11 @@ namespace Game.Audio.Scripts
             {
                 _audioSource.Play();
             }
+        }
+
+        public void ChangeMusic(AudioClip audioClip)
+        {
+            _audioSource.clip = audioClip;
         }
 
         private void OnDestroy()
