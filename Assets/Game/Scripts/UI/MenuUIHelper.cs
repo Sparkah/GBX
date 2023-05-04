@@ -16,7 +16,7 @@ namespace Assets.Game.Scripts.UI
         [SerializeField]
         private UnityEvent OnResume;
 
-        private void Awake()
+        private void OnEnable()
         {
             SetPause(true);
         }
