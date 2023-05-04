@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using Infrastructure;
 using JetBrains.Annotations;
 using Sirenix.OdinInspector;
@@ -22,7 +23,12 @@ namespace Game.Tasks
         [ShowInInspector, ReadOnly] private int _currentTaskList;
         private List<TaskSO> _activeTasks = new List<TaskSO>();
 
-        private void Awake()
+        public void Construct()
+        {
+            
+        }
+        
+            private void Awake()
         {
             _currentTaskList = _world.CurrentTaskListID.Value;
             _currentTask = _world.CurrentTaskID.Value;
