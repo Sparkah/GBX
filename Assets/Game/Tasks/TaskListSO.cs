@@ -6,13 +6,6 @@ namespace Game.Tasks
     public class TaskListSO : ScriptableObject
     {
         public TaskSO[] Tasks;
-
-        [SerializeField] private GameObject[] _objectsToActivate;
-        [SerializeField] private GameObject[] _objectsToDeActivate;
-        [SerializeField] private ParticleSystem[] _particleSystemsToPlay;
-
-        public GameObject[] ObjectsToActivate => _objectsToActivate;
-        public GameObject[] ObjectsToDeActivate => _objectsToDeActivate;
-        public ParticleSystem[] ParticleSystemsToPlay => _particleSystemsToPlay;
+        [HideInInspector] public TaskReferencer TaskReferencer;
     }
 }

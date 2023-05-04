@@ -13,7 +13,5 @@ MonoBehaviour:
   m_Name: TaskList3
   m_EditorClassIdentifier: 
   Tasks:
-  - {fileID: 11400000, guid: ecd20d6557ac24bffb9670f7b485aa09, type: 2}
-  _objectsToActivate: []
-  _objectsToDeActivate: []
-  _particleSystemsToPlay: []
+  - {fileID: 11400000, guid: 35c53518634d749f2bcf776d46757ebd, type: 2}
+  TaskReferencer: {fileID: 0}

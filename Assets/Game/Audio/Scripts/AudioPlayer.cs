@@ -1,4 +1,5 @@
 using UnityEngine;
+
 using Random = UnityEngine.Random;
 
 namespace Game.Audio.Scripts
@@ -9,11 +10,12 @@ namespace Game.Audio.Scripts
 
         [Header("AudioSources")]
         [SerializeField] private AudioSource _audioSourceMain;
+
         [SerializeField] private AudioSource _audioSourceSecondary;
+        [SerializeField] private AudioSource _audioSourceBackground;
 
         [Header("Clips")]
         [SerializeField] private AudioClip _someClip;
-
 
         private void Awake()
         {
@@ -22,7 +24,15 @@ namespace Game.Audio.Scripts
             else
                 Audio = this;
         }
-        
+
+        public void StatBackgroundMusic(bool start)
+        {
+            if (start)
+                _audioSourceBackground.Play();
+            else
+                _audioSourceBackground.Pause();
+        }
+
         public void SetAudioSourceActive(bool isActive)
         {
             _audioSourceMain.enabled = isActive;
@@ -53,8 +63,7 @@ namespace Game.Audio.Scripts
         {
             DoPlay(_audioSourceSecondary, soundToPlay);
         }
-    
-    
+
         /// <summary>
         /// Use for multiple clips play to end each of them
         /// </summary>
@@ -67,7 +76,7 @@ namespace Game.Audio.Scripts
         {
             _audioSourceMain.Stop();
         }
-    
+
         public void StopSecondarySounds()
         {
             _audioSourceSecondary.Stop();
@@ -77,7 +86,7 @@ namespace Game.Audio.Scripts
         {
             if (!_audioSourceMain.enabled)
                 return;
-        
+
             source.pitch = 1f;
             source.clip = AudioToPlay(soundToPlay);
             if (source.clip != null)
