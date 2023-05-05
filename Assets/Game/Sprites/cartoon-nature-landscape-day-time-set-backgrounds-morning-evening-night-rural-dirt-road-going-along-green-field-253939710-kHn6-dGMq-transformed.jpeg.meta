@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3bdbf8ca151ef82409f73a9c2442c2ef
+guid: be5d6435b7bca5346ac8483aaf0b5681
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -120,10 +120,10 @@ TextureImporter:
       name: Morning
       rect:
         serializedVersion: 2
-        x: 25
-        y: 285
-        width: 764
-        height: 235
+        x: 57
+        y: 569
+        width: 1519
+        height: 469
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,8 +131,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c9d2bfdcbc4a2f4a9e7878dddfa91e2
-      internalID: 1486239098
+      spriteID: d749c43a5a2cf8f4294b9ee80163178c
+      internalID: 1791724886
       vertices: []
       indices: 
       edges: []
@@ -141,10 +141,10 @@ TextureImporter:
       name: Day
       rect:
         serializedVersion: 2
-        x: 810
-        y: 285
-        width: 764
-        height: 236
+        x: 1621
+        y: 569
+        width: 1526
+        height: 470
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ccebd9251e444c741bca4d1999e7cc1f
-      internalID: 1827719441
+      spriteID: 3dd5be607b0ab2c4bb72b7fce7f1ec3c
+      internalID: 1257846529
       vertices: []
       indices: 
       edges: []
@@ -162,10 +162,10 @@ TextureImporter:
       name: Evening
       rect:
         serializedVersion: 2
-        x: 26
-        y: 26
-        width: 762
-        height: 236
+        x: 54
+        y: 54
+        width: 1522
+        height: 469
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,8 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 222175a6a79173b4eb9800c126b422b2
-      internalID: 1376069380
+      spriteID: ebf08b2c7a4caf24c8034ac830591153
+      internalID: 156149390
       vertices: []
       indices: 
       edges: []
@@ -183,10 +183,10 @@ TextureImporter:
       name: Night
       rect:
         serializedVersion: 2
-        x: 811
-        y: 26
-        width: 763
-        height: 236
+        x: 1624
+        y: 54
+        width: 1525
+        height: 469
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5efb01279fd8bf241b07ad834fa2cce4
-      internalID: -1846574911
+      spriteID: 301d75426bd9e0b40946a4cb3817c176
+      internalID: -677616022
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Day: 1827719441
-      Evening: 1376069380
-      Morning: 1486239098
-      Night: -1846574911
+      Day: 1257846529
+      Evening: 156149390
+      Morning: 1791724886
+      Night: -677616022
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
