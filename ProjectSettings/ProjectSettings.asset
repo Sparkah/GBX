@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: GBX
-  defaultCursor: {fileID: 2800000, guid: 46e1544baff5858468942b82c807fa64, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 10, y: 10}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

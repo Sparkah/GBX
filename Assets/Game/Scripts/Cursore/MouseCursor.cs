@@ -19,6 +19,9 @@ public class MouseCursor : MonoBehaviour
     [SerializeField]
     private float fixedOffsetZ = -10;
 
+    [SerializeField]
+    private Vector2 spriteOffsetImage = new Vector2(0.8f, -.5f);
+
     private Transform _cursorTransform;
 
 #if UNITY_EDITOR
@@ -62,6 +65,6 @@ public class MouseCursor : MonoBehaviour
 
     private void Update()
     {
-        _cursorTransform.position = (Vector2)playerCamera.ScreenToWorldPoint(Input.mousePosition);
+        _cursorTransform.position = (Vector2)playerCamera.ScreenToWorldPoint(Input.mousePosition) + spriteOffsetImage;
     }
 }
