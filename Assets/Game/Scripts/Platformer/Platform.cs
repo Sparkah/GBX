@@ -70,6 +70,7 @@ namespace Assets.Game.Scripts
 
         private void Awake()
         {
+            InitTimers();
             InitMonoBehavior();
             isReadyToInteract = true;
         }
@@ -92,6 +93,9 @@ namespace Assets.Game.Scripts
 
         private void OnGUI()
         {
+            GUILayout.BeginHorizontal();
+            GUILayout.Box("");
+            GUILayout.EndHorizontal();
         }
 
         private void StartWait()
