@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _taskType: 5
   _sprite: {fileID: 270849229738866729, guid: 872ac051c18ebce4385b15e6d710ceae, type: 3}
-  _text: "\u041F\u043E\u0439\u043C\u0430\u0439 \u043C\u044B\u0448\u044C"
+  _text: "\u041F\u043E\u0439\u043C\u0430\u0439 \u043C\u044B\u0448\u044C \u0410\u043B\u0435\u0445\u043E"
   _time: 0
