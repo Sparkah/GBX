@@ -14,6 +14,7 @@ namespace Game.Tasks.View
         {
             _tasksSystem.OnTasksSetUp += DisplayNewTasks;
             _tasksSystem.OnTaskCompleted += HideTask;
+            _tasksSystem.OnTaskChillProgress += ShowTaskProgress;
         }
 
         private void DisplayNewTasks(List<TaskSO> tasks)
@@ -30,14 +31,12 @@ namespace Game.Tasks.View
             HideTasks(taskAmount);
         }
 
-        private void ShowAllTasks(List<TaskSO> tasks)
+        private void ShowTaskProgress(float current, float initial, int id)
         {
-            for (int i = 0; i < tasks.Count; i++)
-            {
-                _tasks[i].gameObject.SetActive(true);
-            }
+            Debug.Log(id);
+            _tasks[id].Image.fillAmount = current / initial;
         }
-        
+
         private void HideTasks(int amount)
         {
             for (int i = 0; i < _tasks.Count; i++)
@@ -63,6 +62,7 @@ namespace Game.Tasks.View
         {
             _tasksSystem.OnTasksSetUp -= DisplayNewTasks;
             _tasksSystem.OnTaskCompleted -= HideTask;
+            _tasksSystem.OnTaskChillProgress -= ShowTaskProgress;
         }
     }
 }

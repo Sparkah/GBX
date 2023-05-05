@@ -17,6 +17,8 @@ namespace Game.Tasks
         
         public event Action<int> OnTaskCompleted;
         public event Action<List<TaskSO>> OnTasksSetUp;
+
+        public event Action<float, float, int> OnTaskChillProgress;
         
         private List<TaskListSO> _listOfTasks = new List<TaskListSO>();
         
@@ -155,8 +157,10 @@ namespace Game.Tasks
         public void EngageChillTask()
         {
             if (_chillTaskCompleted) return;
+            var id = 0;
             foreach (var task in _activeTasks)
             {
+                id += 1;
                 if (task.TaskType != TaskType.Chill)
                 {
                     return;
@@ -164,6 +168,7 @@ namespace Game.Tasks
                 
                 _timer += Time.deltaTime;
 
+                OnTaskChillProgress?.Invoke(_timer, ReturnChillTaskTimer(), id-1);
                 if (_timer >= ReturnChillTaskTimer())
                 {
                     _chillTaskCompleted = true;
@@ -227,7 +232,7 @@ namespace Game.Tasks
             {
                 if (task.TaskType == TaskType.PassObject && task.Text == name)
                 {
-                    Debug.Log(task.Text);
+                    Debug.Log(id);
                     CompleteTask(id);
                     return;
                 }

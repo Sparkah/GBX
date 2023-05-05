@@ -1,5 +1,6 @@
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.Tasks
 {
@@ -9,6 +10,7 @@ namespace Game.Tasks
         [SerializeField] private TaskType _taskType;
         [SerializeField] private Sprite _sprite;
         [SerializeField] private string _text;
+
         [SerializeField, ShowIf("_taskType", TaskType.Chill)]
         private float _time;
 
