@@ -1,4 +1,5 @@
 using System;
+
 using Game.Player;
 
 using UnityEngine;
@@ -24,8 +25,9 @@ namespace Assets.Game.Scripts.Events
 
         [SerializeField, HideInInspector]
         private BoxCollider2D _boxCollider;
-        
-        
+
+        [SerializeField]
+        private UnityEvent OnAction;
 
 #if UNITY_EDITOR
 
@@ -80,8 +82,9 @@ namespace Assets.Game.Scripts.Events
 
                 if (isSingleUse)
                     RemoveAction();
-                
+
                 OnInteraction?.Invoke();
+                OnAction?.Invoke();
             }
 
             if (interactionText == null)
