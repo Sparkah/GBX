@@ -3390,10 +3390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageRenderer: {fileID: 429130714}
   sprites:
-  - {fileID: 1486239098, guid: 3bdbf8ca151ef82409f73a9c2442c2ef, type: 3}
-  - {fileID: 1827719441, guid: 3bdbf8ca151ef82409f73a9c2442c2ef, type: 3}
-  - {fileID: 1376069380, guid: 3bdbf8ca151ef82409f73a9c2442c2ef, type: 3}
-  - {fileID: -1846574911, guid: 3bdbf8ca151ef82409f73a9c2442c2ef, type: 3}
+  - {fileID: 1791724886, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+  - {fileID: 1257846529, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+  - {fileID: 156149390, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+  - {fileID: -677616022, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
   index: 0
 --- !u!114 &1303912427
 MonoBehaviour:
