@@ -14,6 +14,7 @@ namespace Assets.Game.Scripts.Experemental
         [SerializeField]
         private List<Sprite> sprites = new List<Sprite>();
 
+        [SerializeField]
         private int index = 0;
 
         private void Awake()
