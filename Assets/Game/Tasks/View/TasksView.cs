@@ -33,7 +33,6 @@ namespace Game.Tasks.View
 
         private void ShowTaskProgress(float current, float initial, int id)
         {
-            Debug.Log(id);
             _tasks[id].Image.fillAmount = current / initial;
         }
 
