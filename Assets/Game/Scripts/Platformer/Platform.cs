@@ -90,6 +90,10 @@ namespace Assets.Game.Scripts
             }
         }
 
+        private void OnGUI()
+        {
+        }
+
         private void StartWait()
         {
             IgnoreInteractionForTime();
