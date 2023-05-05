@@ -114,7 +114,7 @@ namespace Game.Player
             //ConsumeEnemy();
             //}
 
-            if (Input.X != 0)
+            if (Input.X != 0 && Time.timeScale>0)
             {
                 OnPlayerMoved?.Invoke();
             }

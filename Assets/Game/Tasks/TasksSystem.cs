@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -23,12 +24,23 @@ namespace Game.Tasks
         [ShowInInspector, ReadOnly] private int _currentTaskList;
         private List<TaskSO> _activeTasks = new List<TaskSO>();
 
-        public void Construct()
+        private void Awake()
         {
-            
+            StartCoroutine(WaitForTimeScaleAndExecute());
         }
-        
-            private void Awake()
+
+        IEnumerator WaitForTimeScaleAndExecute()
+        {
+            // Wait until Time.timeScale is greater than 0
+            while (Time.timeScale <= 0)
+            {
+                yield return null;
+            }
+            
+            SetUp();
+        }
+
+        private void SetUp()
         {
             _currentTaskList = _world.CurrentTaskListID.Value;
             _currentTask = _world.CurrentTaskID.Value;
@@ -107,7 +119,6 @@ namespace Game.Tasks
         {
             foreach (var gameObj in tasks.TaskReferencer.ObjectsToActivate)
             {
-                Debug.Log("activating");
                 gameObj.SetActive(true);
             }
         }

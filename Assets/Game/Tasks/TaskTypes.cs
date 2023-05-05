@@ -9,6 +9,7 @@ namespace Game.Tasks
         PassObject = 5, //прошел мимо объекта => зачислилась ачивка => объект упал
         BreakObject =6,
         CollectAll =7,
-        Interract =8
+        Interract =8,
+        WinGame = 9
     }
 }
