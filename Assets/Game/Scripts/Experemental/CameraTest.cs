@@ -1,10 +1,6 @@
-using System.Net;
-using UnityEngine;
 using Cinemachine;
-using System.Collections;
-using UnityEngine.UIElements;
-using System.Collections.Generic;
-using static UnityEditor.PlayerSettings;
+
+using UnityEngine;
 
 [RequireComponent(typeof(CinemachineVirtualCamera))]
 public class CameraTest : MonoBehaviour
@@ -51,7 +47,7 @@ public class CameraTest : MonoBehaviour
 
     private void Zooming(float value)
     {
-        var lens = _virtualCamera.m_Lens;
+        LensSettings lens = _virtualCamera.m_Lens;
         float size = lens.OrthographicSize += -value * speedOfScrolling;
 
         if (size > maxZoomOut)
