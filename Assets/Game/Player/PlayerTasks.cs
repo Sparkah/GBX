@@ -10,7 +10,7 @@ namespace Game.Player
     public class PlayerTasks : MonoBehaviour
     {
         [SerializeField] private PlayerController _playerController;
-        [SerializeField] private TestAction _testAction;
+        [HideInInspector] public TestAction _testAction;
         
         [Inject] private TasksSystem _tasksSystem;
         private int _chillLayer, _touchLayer;

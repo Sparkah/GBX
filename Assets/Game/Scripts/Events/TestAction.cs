@@ -12,6 +12,8 @@ namespace Assets.Game.Scripts.Events
         [SerializeField]
         private TMPro.TextMeshPro interactionText;
 
+        [SerializeField] private PlayerTasks _playerTasks;
+
         public event Action OnInteraction;
 
         [SerializeField]
@@ -22,6 +24,8 @@ namespace Assets.Game.Scripts.Events
 
         [SerializeField, HideInInspector]
         private BoxCollider2D _boxCollider;
+        
+        
 
 #if UNITY_EDITOR
 
@@ -58,6 +62,11 @@ namespace Assets.Game.Scripts.Events
 
             _interactionViewer.gameObject.SetActive(false);
             _interactionViewer.eulerAngles = Vector3.up * 90f;
+        }
+
+        private void OnEnable()
+        {
+            _playerTasks._testAction = this;
         }
 
         private void Update()

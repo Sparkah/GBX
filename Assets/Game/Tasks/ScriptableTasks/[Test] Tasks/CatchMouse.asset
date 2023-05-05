@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169dc6d7d91034c8e8fdeeddba6a797c, type: 3}
+  m_Name: CatchMouse
+  m_EditorClassIdentifier: 
+  Tasks:
+  - {fileID: 11400000, guid: 824f094b397854e06886c9e5a70cbec9, type: 2}
+  - {fileID: 11400000, guid: 7716fa1c9cd0a41419cbf309ebb0caeb, type: 2}
+  - {fileID: 11400000, guid: de305609615d6439a854c405d616527e, type: 2}
+  - {fileID: 11400000, guid: 708cfbbb0b8ad4cf69f25f96db26883f, type: 2}
+  - {fileID: 11400000, guid: 5f681acaf9abc42d2b35f60f0900c6c4, type: 2}
+  TaskReferencer: {fileID: 0}

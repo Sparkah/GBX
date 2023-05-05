@@ -18,6 +18,7 @@ namespace Game.Tasks.View
 
         private void DisplayNewTasks(List<TaskSO> tasks)
         {
+            //ShowAllTasks(tasks);
             var taskAmount = 0;
             for (int i = 0; i < tasks.Count; i++)
             {
@@ -29,6 +30,14 @@ namespace Game.Tasks.View
             HideTasks(taskAmount);
         }
 
+        private void ShowAllTasks(List<TaskSO> tasks)
+        {
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                _tasks[i].gameObject.SetActive(true);
+            }
+        }
+        
         private void HideTasks(int amount)
         {
             for (int i = 0; i < _tasks.Count; i++)
@@ -47,7 +56,7 @@ namespace Game.Tasks.View
         private void HideTask(int taskID)
         {
             _tasks[taskID].gameObject.SetActive(false);
-            _tasks.Remove(_tasks[taskID]);
+            //_tasks.Remove(_tasks[taskID]);
         }
         
         private void OnDestroy()
