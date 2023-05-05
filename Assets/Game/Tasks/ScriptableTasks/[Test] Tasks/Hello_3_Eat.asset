@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hello_3_Eat
   m_EditorClassIdentifier: 
   _taskType: 8
-  _sprite: {fileID: 0}
-  _text: Food
+  _sprite: {fileID: -2481667334495777647, guid: 43a1a07e3fede71469b41e41eaa5f2c8, type: 3}
+  _text: "\u041F\u043E\u043A\u0443\u0444\u0430\u0442\u044C"
   _time: 0
