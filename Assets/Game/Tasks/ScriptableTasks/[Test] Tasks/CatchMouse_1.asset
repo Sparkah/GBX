@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4927528db99014c7f815db64fcc5ba07, type: 3}
-  m_Name: Day_1_Fridge
+  m_Name: CatchMouse_1
   m_EditorClassIdentifier: 
-  _taskType: 2
-  _sprite: {fileID: -7701167690638835287, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
-  _text: "\u041F\u043E\u0441\u0438\u0434\u0438\u0442\u0435 \u043D\u0430 \u0445\u043E\u043B\u043E\u0434\u0438\u043B\u044C\u043D\u0438\u043A\u0435"
-  _time: 2
+  _taskType: 5
+  _sprite: {fileID: 270849229738866729, guid: 872ac051c18ebce4385b15e6d710ceae, type: 3}
+  _text: "\u041F\u043E\u0439\u043C\u0430\u0439 \u043C\u044B\u0448\u044C"
+  _time: 0
