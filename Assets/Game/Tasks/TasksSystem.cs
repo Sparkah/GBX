@@ -227,6 +227,7 @@ namespace Game.Tasks
             {
                 if (task.TaskType == TaskType.PassObject && task.Text == name)
                 {
+                    Debug.Log(task.Text);
                     CompleteTask(id);
                     return;
                 }
