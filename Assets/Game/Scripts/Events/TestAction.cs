@@ -68,7 +68,7 @@ namespace Assets.Game.Scripts.Events
 
         private void OnEnable()
         {
-            _playerTasks.ResetUp(this);
+            _playerTasks?.ResetUp(this);
         }
 
         private void Update()
@@ -81,8 +81,10 @@ namespace Assets.Game.Scripts.Events
                 _isUsed = true;
 
                 if (isSingleUse)
+                {
                     RemoveAction();
-                
+                }
+
                 OnInteraction?.Invoke();
                 OnAction?.Invoke();
             }
@@ -95,7 +97,13 @@ namespace Assets.Game.Scripts.Events
 
         private void RemoveAction()
         {
-            Destroy(gameObject);
+            if (_playerTasks != null)
+                Destroy(gameObject);
+            else
+            {
+                Destroy(interactionText.gameObject);
+                Destroy(this);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D collision)
