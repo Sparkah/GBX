@@ -105,7 +105,8 @@ namespace Game.Tasks
         {
             foreach (var gameObj in tasks.TaskReferencer.ObjectsToDeActivate)
             {
-                gameObj.SetActive(false);
+                if(gameObj!=null)
+                    gameObj.SetActive(false);
             }
         }
 
@@ -232,7 +233,6 @@ namespace Game.Tasks
             {
                 if (task.TaskType == TaskType.PassObject && task.Text == name)
                 {
-                    Debug.Log(id);
                     CompleteTask(id);
                     return;
                 }
