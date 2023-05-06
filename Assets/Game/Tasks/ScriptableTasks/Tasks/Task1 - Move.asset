@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Task1 - Move
   m_EditorClassIdentifier: 
   _taskType: 3
-  _sprite: {fileID: 0}
+  _sprite: {fileID: 6386409898233771699, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
   _text: 'Move '
   _time: 3

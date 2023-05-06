@@ -147,7 +147,7 @@ namespace Game.Tasks
 
         private void OnDestroy()
         {
-            _world.CurrentTaskID.Value = _currentTask;
+//            _world.CurrentTaskID.Value = _currentTask; => Save game progress here
         }
 
 

@@ -594,6 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eda1057a58c625f4b9d377fe6ff98ffc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioClip: {fileID: 8300000, guid: c51749ed28c62c64baa95de8af575d12, type: 3}
   storyImageRenderer: {fileID: 1734482049}
   srotyText: {fileID: 877472841}
   storySkipButton: {fileID: 955371394}

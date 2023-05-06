@@ -9,6 +9,8 @@ namespace Andrix.Assets.Skillbox_6.Scripts.UI
     {
         //hardCode be like:
 
+        [SerializeField] private AudioClip _audioClip;
+
         [SerializeField]
         private Image storyImageRenderer;
 
@@ -29,6 +31,8 @@ namespace Andrix.Assets.Skillbox_6.Scripts.UI
         private bool _isStoryOn;
         private float _timer = 0;
         private readonly float _storyDelay = .5f;
+        private float _audioLength;
+        private float _timeToChangeScreen;
 
         private void Awake()
         {
@@ -37,21 +41,29 @@ namespace Andrix.Assets.Skillbox_6.Scripts.UI
 
         public void Init()
         {
+            _audioLength = _audioClip.length;
             _storyIndex = -1;
             ShowSkip(true);
             _isStoryOn = true;
             NextStory();
+            _timeToChangeScreen = _audioLength / storiesList.Count;
         }
 
         // Update is called once per frame
         private void Update()
         {
+            _timeToChangeScreen -= Time.deltaTime;
+            if (_timeToChangeScreen <= 0)
+            {
+                NextStory();
+                _timeToChangeScreen = _audioLength / storiesList.Count;
+            }
             ///Input.GetKeyDown(KeyCode.Space)
-            if (Input.anyKey && _isStoryOn && Time.time > _timer)
+            /*if (Input.anyKey && _isStoryOn && Time.time > _timer)
             {
                 _timer = Time.time + _storyDelay;
                 NextStory();
-            }
+            }*/
         }
 
         private void SetStory(in Story story)
