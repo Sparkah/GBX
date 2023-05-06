@@ -14,13 +14,18 @@ namespace Game.Player
         
         [Inject] private TasksSystem _tasksSystem;
         private int _chillLayer, _touchLayer;
+
+        public void ResetUp(TestAction testAction)
+        {
+            _testAction = testAction;
+            _testAction.OnInteraction+=CompleteInterractionTask;
+        }
         
         private void Awake()
         {
             _playerController.OnPlayerMoved += CompleteMoveTask;
             _chillLayer = LayerMask.NameToLayer("Chill");
             _touchLayer = LayerMask.NameToLayer("Touch");
-            _testAction.OnInteraction += CompleteInterractionTask;
         }
 
         private void CompleteInterractionTask()

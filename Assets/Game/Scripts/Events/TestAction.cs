@@ -68,7 +68,7 @@ namespace Assets.Game.Scripts.Events
 
         private void OnEnable()
         {
-            _playerTasks._testAction = this;
+            _playerTasks.ResetUp(this);
         }
 
         private void Update()
@@ -82,7 +82,7 @@ namespace Assets.Game.Scripts.Events
 
                 if (isSingleUse)
                     RemoveAction();
-
+                
                 OnInteraction?.Invoke();
                 OnAction?.Invoke();
             }
