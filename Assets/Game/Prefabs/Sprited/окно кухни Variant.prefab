@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_MaskInteraction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2477630934416990832, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 3645864266717383065, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_SortingOrder
       value: 30
