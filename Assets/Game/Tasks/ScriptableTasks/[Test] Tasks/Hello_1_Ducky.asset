@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hello_1_Ducky
   m_EditorClassIdentifier: 
   _taskType: 5
-  _sprite: {fileID: 2465755373185739075, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
+  _sprite: {fileID: 1638642683405812762, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
   _text: "\u041F\u043E\u043E\u0445\u043E\u0442\u0438\u0442\u0441\u044F"
   _time: 0

@@ -9,7 +9,10 @@ namespace Game.Scripts.TaskAnimatedCharacters
     public class MouseAnimator : ParentAnima
     {
         [SerializeField] private float _waitTime = 1f;
+        [SerializeField] private ParticleSystem _ps;
+        [SerializeField] private SpriteRenderer _spriteRenderer;
         private Rigidbody2D _rigidbody2D;
+        private bool _isDead;
         void Start()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -35,15 +38,27 @@ namespace Game.Scripts.TaskAnimatedCharacters
             StartCoroutine(DumbAssAI());
         }
 
-        public override void PlayeDeathAnima()
+        public override void PlayerDeathAnim()
         {
+            if(_isDead) return;
+
+            _isDead = true;
             _rigidbody2D.gravityScale = 0;
-            var colliders = GetComponentsInChildren<Collider2D>();
+            var colliders = GetComponentsInChildren<BoxCollider2D>();
             foreach (var collider2D1 in colliders)
             {
                 collider2D1.enabled = false;
             }
 
+            StartCoroutine(DieMouse());
+        }
+
+        private IEnumerator DieMouse()
+        {
+            _ps.Play();
+            _spriteRenderer.enabled = false;
+            yield return new WaitForSeconds(_waitTime);
+            gameObject.SetActive(false);
         }
     }
 }

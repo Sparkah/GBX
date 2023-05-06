@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Day_1_Fridge
   m_EditorClassIdentifier: 
   _taskType: 2
-  _sprite: {fileID: -7701167690638835287, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
+  _sprite: {fileID: 2960109301782691827, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
   _text: "\u041E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C\u0441\u044F"
   _time: 2

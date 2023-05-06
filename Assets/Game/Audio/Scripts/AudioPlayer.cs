@@ -17,7 +17,7 @@ namespace Game.Audio.Scripts
         [SerializeField] private AudioSource _audioSourceBackground;
 
         [Header("Clips")]
-        [SerializeField] private AudioClip _someClip;
+        [SerializeField] private AudioClip _crackSound;
 
         private void Awake()
         {
@@ -117,6 +117,7 @@ namespace Game.Audio.Scripts
         {
             return soundToPlay switch
             {
+                AudioSounds.CrackSound =>_crackSound,
                 _ => null
             };
         }

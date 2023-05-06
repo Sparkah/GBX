@@ -1,5 +1,6 @@
 using System.Collections;
 using Assets.Game.Scripts.Events;
+using Game.Scripts.TaskAnimatedCharacters;
 using Game.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -50,6 +51,10 @@ namespace Game.Player
                 {
                     _hasTouched = true;
                     col.GetComponent<Rigidbody2D>().gravityScale = 1;
+                    col.TryGetComponent(out ParentAnima parent);
+                    {
+                        parent.PlayerDeathAnim();
+                    }
                     _tasksSystem.CompletePassObjectTask(col.gameObject.GetComponent<TaskTouchReference>()._taskSo.Text);
                     StartCoroutine(EnableTouch());
                 }

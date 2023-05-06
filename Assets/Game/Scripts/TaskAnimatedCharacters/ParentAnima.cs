@@ -4,6 +4,6 @@ namespace Game.Scripts.TaskAnimatedCharacters
 {
     public abstract class ParentAnima : MonoBehaviour
     {
-        public abstract void PlayeDeathAnima();
+        public abstract void PlayerDeathAnim();
     }
 }

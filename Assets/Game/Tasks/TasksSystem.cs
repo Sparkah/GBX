@@ -251,7 +251,6 @@ namespace Game.Tasks
             {
                 if (task.TaskType == TaskType.Interract)
                 {
-                    Debug.Log("complete interraction");
                     CompleteTask(id);
                     return;
                 }

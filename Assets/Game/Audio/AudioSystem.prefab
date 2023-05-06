@@ -451,7 +451,7 @@ MonoBehaviour:
   _audioSourceMain: {fileID: 7698896602412660651}
   _audioSourceSecondary: {fileID: 6725695602026794179}
   _audioSourceBackground: {fileID: 4107357917160854684}
-  _someClip: {fileID: 0}
+  _crackSound: {fileID: 8300000, guid: 4c59675d178384e31ae319020214e7ca, type: 3}
 --- !u!1 &5313252633059848830
 GameObject:
   m_ObjectHideFlags: 0

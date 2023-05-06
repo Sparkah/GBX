@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hello_1_Vase
   m_EditorClassIdentifier: 
   _taskType: 5
-  _sprite: {fileID: 366361803121480533, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
+  _sprite: {fileID: -4201952663224752395, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
   _text: "\u041F\u043E\u043D\u044E\u0445\u0430\u0442\u044C \u0446\u0432\u0435\u0442\u043E\u043A"
   _time: 0
