@@ -4,7 +4,7 @@ using UnityEditor.Sequences;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-public class ЫУЧ : MonoBehaviour
+public class Skip : MonoBehaviour
 {
     // Start is called before the first frame update
     private void Start()
@@ -14,7 +14,7 @@ public class ЫУЧ : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.V))
             SceneManager.LoadScene(0);
     }
 }
