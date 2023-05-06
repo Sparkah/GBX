@@ -154,7 +154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4105099031630176146, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -4105099031630176146, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_MaskInteraction
@@ -190,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2081451758625736595, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_MaskInteraction
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3645864266717383065, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_SortingOrder
-      value: 11
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 8731662858653237662, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_IsActive
