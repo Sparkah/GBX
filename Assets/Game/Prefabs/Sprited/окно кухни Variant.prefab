@@ -148,13 +148,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5861563687282295683, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4105099031630176146, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_SortingOrder
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4105099031630176146, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_MaskInteraction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3079989478935506642, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 966726587838813415, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2081451758625736595, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_Color.a
@@ -174,11 +186,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2081451758625736595, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_SortingOrder
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2081451758625736595, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
       propertyPath: m_MaskInteraction
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3645864266717383065, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8731662858653237662, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9003218104803221868, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 4843985084834002234, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
@@ -228,7 +252,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3525725018285674479, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
+  m_Sprite: {fileID: 3943327980906918252, guid: 1b50583d9854a9f4e8bddd248f50cb76, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
