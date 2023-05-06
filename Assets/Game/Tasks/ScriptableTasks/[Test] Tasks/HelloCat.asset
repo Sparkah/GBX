@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HelloCat
   m_EditorClassIdentifier: 
   _taskType: 8
-  _sprite: {fileID: 6386409898233771699, guid: 490488543a81c49a79436eb03a7e5c3d, type: 3}
+  _sprite: {fileID: 21300000, guid: d30dea5de10601a40946ca0c2fb6b4ab, type: 3}
   _text: "\u041D\u0430\u0439\u0442\u0438 \u0434\u0440\u0443\u0433\u043E\u0433\u043E
     \u043A\u043E\u0442\u0430"
   _time: 0

@@ -4,6 +4,7 @@ using UnityEditor;
 using System.Collections;
 using UnityEngine.Events;
 using Game.Audio.Scripts;
+using UnityEngine.SceneManagement;
 
 namespace Assets.Game.Scripts.UI
 {
@@ -39,9 +40,20 @@ namespace Assets.Game.Scripts.UI
                 SetPause(!IsPaused);
         }
 
+        private bool isAlreadyPlayed = false;
+
         public void Play()
         {
             SetPause(false);
+
+            if (isAlreadyPlayed)
+            {
+                AudioSystem.StopSceneMusicAction?.Invoke(true);
+                AudioPlayer.StatBackgroundMusicAction?.Invoke(false);
+                SceneManager.LoadScene(0);
+            }
+
+            isAlreadyPlayed = true;
         }
 
         public void PauseToggle()

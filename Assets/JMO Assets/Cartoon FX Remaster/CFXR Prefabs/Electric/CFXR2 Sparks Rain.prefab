@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 763799897560185546}
   - component: {fileID: 9000458058102257021}
   - component: {fileID: -8175478910045638318}
+  - component: {fileID: 3125073394874416659}
   m_Layer: 0
   m_Name: CFXR2 Sparks Rain
   m_TagString: Untagged
@@ -664,7 +665,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 80
+    angle: 74.81
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -750,7 +751,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.0001
+      value: 0.22
       mode: 0
       spread: 0
       speed:
@@ -3556,16 +3557,16 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.3301887, g: 0.010902463, b: 0.049113244, a: 1}
-        key1: {r: 1, g: 0.48271227, b: 0, a: 1}
-        key2: {r: 1, g: 0.8005173, b: 0.51, a: 0}
+        key0: {r: 0, g: 0.6511247, b: 1, a: 1}
+        key1: {r: 0.4481132, g: 0.9240717, b: 1, a: 1}
+        key2: {r: 0, g: 0.35274744, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 34888
+        ctime1: 31804
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -4776,7 +4777,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 20fdd157129f03a40ae447534dd4603c, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4883,6 +4883,21 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 763799897560185588}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1970224679
+  m_SortingLayer: 1
   m_SortingOrder: 1
+--- !u!114 &3125073394874416659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763799897560185588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ecd9d9e9a7f914592d1d3c4f9aeeb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShowHint: 20
+  isUsingTimerFromStart: 0
+  _particle: {fileID: 763799897560185547}

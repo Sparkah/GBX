@@ -12,6 +12,9 @@ namespace Assets.Game.Scripts.Hint
         [Range(1, 60)]
         private float timeToShowHint = 20;
 
+        [SerializeField]
+        private bool isUsingTimerFromStart = true;
+
         [SerializeField, HideInInspector]
         private ParticleSystem _particle;
 
@@ -49,8 +52,10 @@ namespace Assets.Game.Scripts.Hint
 
         private void OnEnable()
         {
-            _particle.Stop();
-            ShowHitTimer();
+            StopParticle();
+
+            if (isUsingTimerFromStart)
+                ShowHitTimer();
         }
 
         private void OnDisable()
@@ -73,6 +78,21 @@ namespace Assets.Game.Scripts.Hint
         public void PlayParticle()
         {
             _particle.Play();
+        }
+
+        [ContextMenu("Stop Particle")]
+        public void StopParticle()
+        {
+            _particle.Stop();
+        }
+
+        [ContextMenu("Toggle Particle")]
+        public void ToggleParticle()
+        {
+            if (_particle.isPlaying)
+                StopParticle();
+            else
+                PlayParticle();
         }
 
         [ContextMenu("Stop timer")]

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _taskType: 9
   _sprite: {fileID: 21300000, guid: 4a231ba0e81e63849a8f985c228e8acd, type: 3}
-  _text: Win Game!!!
+  _text: 'EZ GAME EZ LIFE '
   _time: 0
