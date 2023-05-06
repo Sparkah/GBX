@@ -46,7 +46,8 @@ namespace Andrix.Assets.Skillbox_6.Scripts.UI
         // Update is called once per frame
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space) && _isStoryOn && Time.time > _timer)
+            ///Input.GetKeyDown(KeyCode.Space)
+            if (Input.anyKey && _isStoryOn && Time.time > _timer)
             {
                 _timer = Time.time + _storyDelay;
                 NextStory();
