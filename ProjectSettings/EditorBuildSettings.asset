@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Game/Scenes/Storyteller.unity
+    guid: b36269b294b83874bbf22fa16d28274d
+  - enabled: 1
     path: Assets/Game/Scenes/Platformer Prototype.unity
     guid: 3854f41e6220aaf49bf8628b722c8a13
-  - enabled: 0
-    path: Assets/Game/Scenes/Andrix/My.unity
-    guid: 45b893930b0d32041ae22222c5517785
   m_configObjects: {}

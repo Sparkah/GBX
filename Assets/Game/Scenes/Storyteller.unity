@@ -215,9 +215,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 955371393}
   - {fileID: 1734482047}
   - {fileID: 1698212634}
+  - {fileID: 955371393}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -462,7 +462,7 @@ RectTransform:
   m_Children:
   - {fileID: 1906452557}
   m_Father: {fileID: 258938892}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -512,7 +512,20 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 955371395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114935641}
+        m_TargetAssemblyTypeName: Andrix.Assets.Skillbox_6.Scripts.UI.StorytellerMini,
+          Assembly-CSharp
+        m_MethodName: SkipStory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &955371395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -561,6 +574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1114935642}
   - component: {fileID: 1114935641}
+  - component: {fileID: 1114935643}
   m_Layer: 0
   m_Name: Storytaller - script
   m_TagString: Untagged
@@ -584,14 +598,45 @@ MonoBehaviour:
   srotyText: {fileID: 877472841}
   storySkipButton: {fileID: 955371394}
   storiesList:
-  - sprite: {fileID: 1791724886, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
-    text: "\u042D\u0442\u043E \u0431\u044B\u043B \u043E\u0431\u044B\u0447\u043D\u044B\u0439
-      \u0434\u0435\u043D\u044C"
   - sprite: {fileID: -677616022, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
-    text: "\u0414\u043B\u044F \u043A\u043E\u0442\u0430 \u0438\u0437 \u043F\u043E\u0434\u0432\u043E\u0440\u043E\u0442\u043D\u0438"
+    text: "\u042D\u0442\u043E \u0431\u044B\u043B \u043E\u0431\u044B\u0447\u043D\u044B\u0439
+      \u0441\u0443\u0440\u043E\u0432\u044B\u0439 \u0434\u0435\u043D\u044C"
+  - sprite: {fileID: -677616022, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+    text: "\u0414\u043B\u044F \u0431\u0435\u0437\u0434\u043E\u043C\u043D\u043E\u0433\u043E
+      \u043A\u043E\u0442\u0430 \u0438\u0437 \u043F\u043E\u0434\u0432\u043E\u0440\u043E\u0442\u043D\u0438"
+  - sprite: {fileID: 156149390, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+    text: "\u041D\u043E \u043E\u0434\u043D\u0430\u0436\u0434\u044B \u0435\u043C\u0443
+      \u043F\u043E\u0441\u0447\u0430\u0441\u0442\u043B\u0438\u0432\u0438\u043B\u043E\u0441\u044C
+      \u043D\u0430\u0439\u0442\u0438 \u0441\u0435\u0431\u0435 \u0445\u043E\u0437\u044F\u0438\u043D\u0430"
+  - sprite: {fileID: 1791724886, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+    text: "\u041E\u043D \u043D\u0438\u043A\u043E\u0433\u0434\u0430 \u043D\u0435 \u0437\u043D\u0430\u043B,
+      \u0447\u0442\u043E \u0442\u0430\u043A\u043E\u0435 \u0431\u044B\u0442\u044C
+      \u043E\u0434\u043E\u043C\u0430\u0448\u043D\u0435\u043D\u043D\u044B\u043C"
+  - sprite: {fileID: 1791724886, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+    text: "\u042D\u0442\u043E \u0431\u044B\u043B\u043E \u0442\u044F\u0436\u0451\u043B\u043E\u0435
+      \u043E\u0441\u043E\u0437\u043D\u0430\u043D\u0438\u0435 \u0442\u043E\u0433\u043E,
+      \u0447\u0442\u043E \u043D\u0443\u0436\u043D\u043E \u0430\u0434\u0430\u043F\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0441\u044F
+      \u043A \u043D\u043E\u0432\u044B\u043C \u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C
+      \u0436\u0438\u0437\u043D\u0438"
+  - sprite: {fileID: 1257846529, guid: be5d6435b7bca5346ac8483aaf0b5681, type: 3}
+    text: "\u041D\u0430\u0441\u0442\u0430\u043B\u043E \u0432\u0440\u0435\u043C\u044F
+      \u043F\u043E\u0447\u0443\u0432\u0441\u0442\u0432\u043E\u0432\u0430\u0442\u044C
+      \u0441\u0435\u0431\u044F \u043A\u0430\u043A \u0434\u043E\u043C\u0430"
   onStoryEnds:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1114935643}
+        m_TargetAssemblyTypeName: NextScene, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1114935642
 Transform:
   m_ObjectHideFlags: 0
@@ -599,13 +644,153 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114935640}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1114935643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114935640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4a3018780c5c034698e547c574b2f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1678719911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678719913}
+  - component: {fileID: 1678719912}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1678719912
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678719911}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 4accb4db9d99a2343815727c065693c8, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c51749ed28c62c64baa95de8af575d12, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1678719913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678719911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2088284714}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698212633
 GameObject:
@@ -639,7 +824,7 @@ RectTransform:
   m_Children:
   - {fileID: 877472840}
   m_Father: {fileID: 258938892}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -715,7 +900,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 258938892}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -975,7 +1160,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1678719913}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
